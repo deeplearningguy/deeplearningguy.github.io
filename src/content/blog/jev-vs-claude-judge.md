@@ -16,7 +16,7 @@ The answers: no, and no. Jev judges about as well as Claude. Neither model knows
 
 Most benchmarks for these models ask one thing: did it pick the right answer? That tells you nothing about confidence. A model that says 98% on everything scores exactly the same as one that hesitates on the hard cases.
 
-So I built DoubtBench on NVIDIA's HelpSteer2 (CC BY 4.0). Every AI response in it was rated by several humans, and their individual votes are public. When three people disagree about whether a response is helpful, even the experts don't have one right answer. A good judge should show that same doubt.
+So I built [DoubtBench](https://github.com/trust123500/DoubtBench) on NVIDIA's [HelpSteer2](https://huggingface.co/datasets/nvidia/HelpSteer2) (CC BY 4.0). Every AI response in it was rated by several humans, and their individual votes are public. When three people disagree about whether a response is helpful, even the experts don't have one right answer. A good judge should show that same doubt.
 
 DoubtBench turns that into 7,455 questions: rate a response on helpfulness, correctness, coherence, complexity and verbosity, decide if it's acceptable, and pick the better of two responses. The score out of 100 averages accuracy, calibration, and how closely a model's probabilities match the human votes.
 
@@ -74,4 +74,4 @@ Jev is still the winner for decision making as it's much cheaper.
 
 Just don't trust either one's confidence score to tell you when to call a human.
 
-Everything is open and reproducible. The Jev run costs 10 cents, and adding a model is one adapter file plus a pull request. Laya and SemIf are up next. Got a model you want tested? Open an issue and I'll run it.
+Everything is open and reproducible. The Jev run costs 10 cents, and adding a model is one adapter file plus a pull request. Laya and SemIf are up next. Got a model you want tested? [Open an issue](https://github.com/trust123500/DoubtBench) and I'll run it.
