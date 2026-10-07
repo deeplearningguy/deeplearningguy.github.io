@@ -1,13 +1,25 @@
 // @ts-check
 
+import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://deeplearningguy.github.io',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+		processor: unified({
+			remarkPlugins: [remarkMath],
+			rehypePlugins: [rehypeKatex],
+		}),
+		shikiConfig: {
+			themes: { light: 'github-light', dark: 'github-dark' },
+		},
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),
